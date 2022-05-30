@@ -10,7 +10,7 @@ function PokemonList() {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch("https://pokeapi.co/api/v2/pokemon?limit=649");
+    const data = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
     const pokemons = await data.json();
 
     setPokemons(pokemons.results);
