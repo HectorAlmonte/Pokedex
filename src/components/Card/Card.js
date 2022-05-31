@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./Card.css";
 
 const colors = {
@@ -20,15 +20,13 @@ const colors = {
 const main_types = Object.keys(colors);
 
 const Card = ({ nombre = "?", index = 1 }) => {
-  const img =
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" +
-    index +
-    ".svg";
+  const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${index}.svg`
 
-  const [PokeTypes, setPokeTypes] = React.useState([]);
+  const [PokeTypes, setPokeTypes] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   const fetchData = async () => {
@@ -48,7 +46,7 @@ const Card = ({ nombre = "?", index = 1 }) => {
         <div className="Pokemon-Number-styles">
           <h3>#{index.toString().padStart(3, "0")}</h3>
         </div>
-        <img className="img-styles" src={img} />
+        <img className="img-styles" src={img} alt={nombre} />
       </div>
       <div className="card-content">
         <div className="card-title">

@@ -3,7 +3,7 @@ import "./Header.css";
 function Header() {
   return (
     <div className="header-container">
-      <p className="a">
+      <p className="a-jagger">
         <div className="tittle">
           <img
             className="img-styles"
