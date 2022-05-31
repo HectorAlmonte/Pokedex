@@ -1,11 +1,11 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import "./PokemonList.css";
 
 function PokemonList() {
-  const [pokemons, setPokemons] = React.useState([]);
+  const [pokemons, setPokemons] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchData();
   }, []);
 
